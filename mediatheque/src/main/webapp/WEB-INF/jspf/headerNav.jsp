@@ -14,7 +14,6 @@
 					<a class="dropdown-item" href="<c:url value="/films/toCreate" />"><spring:message code="commons.nav.film" /></a>
 					<a class="dropdown-item" href="<c:url value="/livres/toCreate" />"><spring:message code="commons.nav.livre" /></a>
 					<a class="dropdown-item" href="<c:url value="/jeux/toCreate" />"><spring:message code="commons.nav.jeu" /></a>
-					<a class="dropdown-item" href="<c:url value="/dvds/toCreate" />"><spring:message code="commons.nav.dvd" /></a>
 					<a class="dropdown-item" href="<c:url value="/cds/toCreate" />"><spring:message code="commons.nav.cd" /></a>
 				</div>
 			</li>
