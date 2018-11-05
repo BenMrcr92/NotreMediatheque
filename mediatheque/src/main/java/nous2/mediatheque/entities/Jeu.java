@@ -38,4 +38,34 @@ public class Jeu extends Element implements Serializable {
     public void setDateEdition(LocalDate dateEdition) {
 	this.dateEdition = dateEdition;
     }
+
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = super.hashCode();
+	result = prime * result + (nom == null ? 0 : nom.hashCode());
+	return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj) {
+	    return true;
+	}
+	if (!super.equals(obj)) {
+	    return false;
+	}
+	if (getClass() != obj.getClass()) {
+	    return false;
+	}
+	Jeu other = (Jeu) obj;
+	if (nom == null) {
+	    if (other.nom != null) {
+		return false;
+	    }
+	} else if (!nom.equals(other.nom)) {
+	    return false;
+	}
+	return true;
+    }
 }

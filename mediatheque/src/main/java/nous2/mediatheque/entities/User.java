@@ -1,7 +1,6 @@
 package nous2.mediatheque.entities;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -150,20 +149,41 @@ public class User implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + (email == null ? 0 : email.hashCode());
+	result = prime * result + (pseudo == null ? 0 : pseudo.hashCode());
+	return result;
+    }
+
+    @Override
     public boolean equals(Object obj) {
 	if (this == obj) {
 	    return true;
 	}
-	if (!(obj instanceof User)) {
+	if (obj == null) {
+	    return false;
+	}
+	if (getClass() != obj.getClass()) {
 	    return false;
 	}
 	User other = (User) obj;
-	return email.equals(other.email) | pseudo.equals(other.pseudo);
-    }
-
-    @Override
-    public int hashCode() {
-	return Objects.hash(email);
+	if (email == null) {
+	    if (other.email != null) {
+		return false;
+	    }
+	} else if (!email.equals(other.email)) {
+	    return false;
+	}
+	if (pseudo == null) {
+	    if (other.pseudo != null) {
+		return false;
+	    }
+	} else if (!pseudo.equals(other.pseudo)) {
+	    return false;
+	}
+	return true;
     }
 
     @Override

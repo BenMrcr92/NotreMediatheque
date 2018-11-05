@@ -37,6 +37,22 @@ public class FilmController extends BaseController {
 	return "filmCreate";
     }
 
+    @GetMapping("/toUpdate")
+    public String toUpdate(@RequestParam("id") Long id, Model model) {
+	Film film = filmService.findById(id);
+	model.addAttribute("film", film);
+	return "filmUpdate";
+    }
+
+    @PostMapping("/update")
+    public String update(@Valid @ModelAttribute("film") Film film,
+	    BindingResult result) {
+	if (validateAndSave(film, result)) {
+	    return "redirect:/home/welcome";
+	}
+	return "filmUpdate";
+    }
+
     private boolean validateAndSave(Film film, BindingResult result) {
 	if (!result.hasErrors()) {
 	    filmService.save(film);

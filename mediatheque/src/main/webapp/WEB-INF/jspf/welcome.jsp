@@ -24,7 +24,9 @@
 							<th><spring:message code="home.welcome.films.dateSortie" /></th>
 							<th><spring:message code="home.welcome.films.favori" /></th>
 							<th><spring:message code="home.welcome.films.utilise" /></th>
-							<th><spring:message code="commons.symbols.nbsp" /></th>
+							<th><spring:message code="home.welcome.films.dvd" /></th>
+							<th><spring:message code="home.welcome.films.blueRay" /></th>
+							<th><spring:message code="home.welcome.films.numerique" /></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -33,8 +35,11 @@
 							<tr>
 								<td>${film.nom}</td>
 								<td>${film.dateSortie}</td>
-								<td>${film.favori}</td>
-								<td>${film.utilise}</td>
+								<td><i class="material-icons"><c:if test="${film.favori == true}">check</c:if><c:if test="${film.favori == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${film.utilise == true}">check</c:if><c:if test="${film.utilise == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${film.dvd == true}">check</c:if><c:if test="${film.dvd == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${film.blueRay == true}">check</c:if><c:if test="${film.blueRay == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${film.numerique == true}">check</c:if><c:if test="${film.numerique == false}">close</c:if></i></td>
 								<td><a href="<c:url value="/films/toUpdate?id=${film.id}" />"><spring:message code="home.welcome.films.update" /></a></td>
 							</tr>
 						</c:forEach>

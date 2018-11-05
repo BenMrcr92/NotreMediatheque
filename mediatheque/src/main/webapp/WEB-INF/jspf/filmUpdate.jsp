@@ -13,8 +13,9 @@
 	<div class="container-fluid">
 		<section>
 			<h1 class="text-primary"><spring:message code="entities.film.create.title" /></h1>
-			<form:form action="create" method="POST" modelAttribute="film">
+			<form:form action="update" method="POST" modelAttribute="film">
 				<div class="form-row">
+					<form:hidden path="id" />
 					<div class="form-group col">
 						<form:label path="nom"><spring:message code="entities.film.nom" /><span class="text-danger"><spring:message code="commons.symbols.required" /></span></form:label>
 						<div class="input-group">

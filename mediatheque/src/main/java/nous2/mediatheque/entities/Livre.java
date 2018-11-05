@@ -38,4 +38,34 @@ public class Livre extends Element implements Serializable {
     public void setDateParution(LocalDate dateParution) {
 	this.dateParution = dateParution;
     }
+
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = super.hashCode();
+	result = prime * result + (nom == null ? 0 : nom.hashCode());
+	return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj) {
+	    return true;
+	}
+	if (!super.equals(obj)) {
+	    return false;
+	}
+	if (getClass() != obj.getClass()) {
+	    return false;
+	}
+	Livre other = (Livre) obj;
+	if (nom == null) {
+	    if (other.nom != null) {
+		return false;
+	    }
+	} else if (!nom.equals(other.nom)) {
+	    return false;
+	}
+	return true;
+    }
 }

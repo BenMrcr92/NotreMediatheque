@@ -14,17 +14,22 @@ public class FilmDTO {
 
     private boolean utilise;
 
-    // private Set<String> supports;
+    private boolean dvd;
+
+    private boolean blueRay;
+
+    private boolean numerique;
+
     public FilmDTO(Long id, String nom, LocalDate dateSortie, boolean favori,
-	    boolean utilise
-    // , Set<String> supports
-    ) {
+	    boolean utilise, boolean dvd, boolean blueRay, boolean numerique) {
 	setId(id);
 	setNom(nom);
 	setDateSortie(dateSortie);
-	// setSupports(supports);
 	setFavori(favori);
 	setUtilise(utilise);
+	setDvd(dvd);
+	setBlueRay(blueRay);
+	setNumerique(numerique);
     }
 
     public Long getId() {
@@ -51,13 +56,6 @@ public class FilmDTO {
 	this.dateSortie = dateSortie;
     }
 
-    // public Set<String> getSupports() {
-    // return supports;
-    // }
-    //
-    // public void setSupports(Set<String> supports) {
-    // this.supports = supports;
-    // }
     public boolean isFavori() {
 	return favori;
     }
@@ -72,5 +70,29 @@ public class FilmDTO {
 
     public void setUtilise(boolean utilise) {
 	this.utilise = utilise;
+    }
+
+    public boolean isDvd() {
+	return dvd;
+    }
+
+    public void setDvd(boolean dvd) {
+	this.dvd = dvd;
+    }
+
+    public boolean isBlueRay() {
+	return blueRay;
+    }
+
+    public void setBlueRay(boolean blueRay) {
+	this.blueRay = blueRay;
+    }
+
+    public boolean isNumerique() {
+	return numerique;
+    }
+
+    public void setNumerique(boolean numerique) {
+	this.numerique = numerique;
     }
 }

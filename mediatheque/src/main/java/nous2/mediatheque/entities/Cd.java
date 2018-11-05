@@ -41,4 +41,34 @@ public class Cd extends Element implements Serializable {
     public void setDateSortie(LocalDate dateSortie) {
 	this.dateSortie = dateSortie;
     }
+
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = super.hashCode();
+	result = prime * result + (nom == null ? 0 : nom.hashCode());
+	return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj) {
+	    return true;
+	}
+	if (!super.equals(obj)) {
+	    return false;
+	}
+	if (getClass() != obj.getClass()) {
+	    return false;
+	}
+	Cd other = (Cd) obj;
+	if (nom == null) {
+	    if (other.nom != null) {
+		return false;
+	    }
+	} else if (!nom.equals(other.nom)) {
+	    return false;
+	}
+	return true;
+    }
 }
