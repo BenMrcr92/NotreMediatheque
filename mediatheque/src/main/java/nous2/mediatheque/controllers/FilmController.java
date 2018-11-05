@@ -1,5 +1,7 @@
 package nous2.mediatheque.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import nous2.mediatheque.dto.FilmDTO;
 import nous2.mediatheque.entities.Film;
 import nous2.mediatheque.services.IFilmService;
 
@@ -33,6 +36,7 @@ public class FilmController extends BaseController {
 	    BindingResult result, Model model) {
 	if (validateAndSave(film, result)) {
 	    model.addAttribute("film", new Film());
+	    return "redirect:/films/toList";
 	}
 	return "filmCreate";
     }
@@ -48,9 +52,21 @@ public class FilmController extends BaseController {
     public String update(@Valid @ModelAttribute("film") Film film,
 	    BindingResult result) {
 	if (validateAndSave(film, result)) {
-	    return "redirect:/home/welcome";
+	    return "redirect:/films/toList";
 	}
 	return "filmUpdate";
+    }
+
+    @GetMapping("/toList")
+    public String toList(Model model) {
+	populateModel(model);
+	return "filmList";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") Long id) {
+	filmService.deleteById(id);
+	return "redirect:/films/toList";
     }
 
     private boolean validateAndSave(Film film, BindingResult result) {
@@ -59,5 +75,10 @@ public class FilmController extends BaseController {
 	    return true;
 	}
 	return false;
+    }
+
+    private void populateModel(Model model) {
+	List<FilmDTO> films = filmService.findAllAsDTO(getAppLanguage());
+	model.addAttribute("films", films);
     }
 }

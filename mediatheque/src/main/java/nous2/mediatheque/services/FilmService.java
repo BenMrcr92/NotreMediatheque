@@ -32,6 +32,7 @@ public class FilmService implements IFilmService {
 	return optional.get();
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     @Override
     public void save(Film film) {
 	filmJpaRepository.save(film);
@@ -40,5 +41,11 @@ public class FilmService implements IFilmService {
     @Override
     public List<FilmDTO> findAllAsDTO(AppLanguage lang) {
 	return filmRepository.findAllAsDTO(lang);
+    }
+
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
+    @Override
+    public void deleteById(Long id) {
+	filmJpaRepository.deleteById(id);
     }
 }

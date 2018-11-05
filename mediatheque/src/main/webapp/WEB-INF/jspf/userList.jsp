@@ -19,10 +19,10 @@
 			<table class="table table-hover">
 				<thead class="thead-light">
 					<tr>
-						<th><spring:message code="entities.user.list.pseudo" /></th>
-						<th><spring:message code="entities.user.list.email" /></th>
-						<th><spring:message code="entities.user.list.lastname" /></th>
-						<th><spring:message code="entities.user.list.firstname" /></th>
+						<th><spring:message code="entities.user.pseudo" /></th>
+						<th><spring:message code="entities.user.email" /></th>
+						<th><spring:message code="entities.user.lastname" /></th>
+						<th><spring:message code="entities.user.firstname" /></th>
 						
 						<th></th>
 					</tr>

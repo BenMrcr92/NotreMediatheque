@@ -13,4 +13,6 @@ public interface IFilmService {
     public void save(Film film);
 
     public List<FilmDTO> findAllAsDTO(AppLanguage lang);
+
+    public void deleteById(Long id);
 }
