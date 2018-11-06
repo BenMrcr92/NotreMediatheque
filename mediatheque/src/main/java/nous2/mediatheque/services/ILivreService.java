@@ -13,5 +13,5 @@ public interface ILivreService {
 
     public List<LivreDTO> findAllAsDTO();
 
-    public String deleteById(Long id);
+    public void deleteById(Long id);
 }

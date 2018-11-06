@@ -23,6 +23,8 @@
 							<th><spring:message code="entities.livre.dateParution" /></th>
 							<th><spring:message code="entities.livre.favori" /></th>
 							<th><spring:message code="entities.livre.utilise" /></th>
+							<th></th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -31,8 +33,8 @@
 							<tr>
 								<td>${livre.nom}</td>
 								<td>${livre.dateParution}</td>
-								<td><i class="material-icons"><c:if test="${film.favori == true}">check</c:if><c:if test="${film.favori == false}">close</c:if></i></td>
-								<td><i class="material-icons"><c:if test="${film.utilise == true}">check</c:if><c:if test="${film.utilise == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${livre.favori == true}">check</c:if><c:if test="${livre.favori == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${livre.utilise == true}">check</c:if><c:if test="${livre.utilise == false}">close</c:if></i></td>
 								<sec:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">	
 									<td><a href="<c:url value="/livres/toUpdate?id=${livre.id}" />"><spring:message code="entities.update" /></a></td>
 									<td><a href="<c:url value="/livres/delete/${livre.id}" />"><spring:message code="entities.delete" /></a></td>

@@ -41,9 +41,9 @@ public class LivreService implements ILivreService {
 	return livreRepository.findAllAsDTO();
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
     @Override
-    public String deleteById(Long id) {
+    public void deleteById(Long id) {
 	livreJpaRepository.deleteById(id);
-	return "redirect:/livres/toList";
     }
 }

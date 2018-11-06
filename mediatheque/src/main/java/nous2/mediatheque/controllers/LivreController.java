@@ -36,6 +36,7 @@ public class LivreController extends BaseController {
 	    BindingResult result, Model model) {
 	if (validateAndSave(livre, result)) {
 	    model.addAttribute("livre", new Livre());
+	    return "redirect:/livres/toList";
 	}
 	return "livreCreate";
     }
