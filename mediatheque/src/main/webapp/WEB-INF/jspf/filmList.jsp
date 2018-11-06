@@ -26,6 +26,8 @@
 							<th><spring:message code="entities.film.dvd" /></th>
 							<th><spring:message code="entities.film.blueRay" /></th>
 							<th><spring:message code="entities.film.numerique" /></th>
+							<th></th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -40,8 +42,8 @@
 								<td><i class="material-icons"><c:if test="${film.blueRay == true}">check</c:if><c:if test="${film.blueRay == false}">close</c:if></i></td>
 								<td><i class="material-icons"><c:if test="${film.numerique == true}">check</c:if><c:if test="${film.numerique == false}">close</c:if></i></td>
 								<sec:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">	
-									<td><a href="<c:url value="/films/toUpdate?id=${film.id}" />"><spring:message code="entities.film.update" /></a></td>
-									<td><a href="<c:url value="/films/delete/${film.id}" />"><spring:message code="entities.film.delete" /></a></td>
+									<td><a href="<c:url value="/films/toUpdate?id=${film.id}" />"><spring:message code="entities.update" /></a></td>
+									<td><a href="<c:url value="/films/delete/${film.id}" />"><spring:message code="entities.delete" /></a></td>
 								</sec:authorize>
 							</tr>
 						</c:forEach>
