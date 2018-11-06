@@ -5,14 +5,14 @@
 <!DOCTYPE html>
 <html lang="${pageContext.response.locale.language}">
 <head>
-<title><spring:message code="entities.jeu.create.title" /></title>
+<title><spring:message code="entities.jeu.update.title" /></title>
 <c:import url="commonsHead.jsp" />
 </head>
 <body>
 	<c:import url="headerNav.jsp" />
 	<div class="container-fluid">
 		<section>
-			<h1 class="text-primary"><spring:message code="entities.jeu.create.title" /></h1>
+			<h1 class="text-primary"><spring:message code="entities.jeu.update.title" /></h1>
 			<form:form action="update" method="POST" modelAttribute="jeu">
 				<div class="form-row">
 					<form:hidden path="id" />
@@ -33,7 +33,7 @@
 				</div>
 			 	<div class="form-row">
 			 		<div class="form-group col">
-						<form:label path="description"><spring:message code="entities.jeu.description" /></form:label>
+						<form:label path="description"><spring:message code="entities.description" /></form:label>
 						<form:textarea path="description" rows="5" cssClass="form-control" lang="fr" />
 					</div>
 				</div>

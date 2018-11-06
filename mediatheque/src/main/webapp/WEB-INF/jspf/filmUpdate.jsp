@@ -36,7 +36,7 @@
 				</div>
 			 	<div class="form-row">
 			 		<div class="form-group col">
-						<form:label path="description"><spring:message code="entities.film.description" /></form:label>
+						<form:label path="description"><spring:message code="entities.description" /></form:label>
 						<div class="input-group">
 							<form:textarea path="description" rows="5" cssClass="form-control" lang="fr" />
 						</div>

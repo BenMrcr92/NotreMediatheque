@@ -33,7 +33,7 @@
 				</div>
 			 	<div class="form-row">
 			 		<div class="form-group col">
-						<form:label path="description"><spring:message code="entities.livre.description" /></form:label>
+						<form:label path="description"><spring:message code="entities.description" /></form:label>
 						<form:textarea path="description" rows="5" cssClass="form-control" lang="fr" />
 					</div>
 				</div>
