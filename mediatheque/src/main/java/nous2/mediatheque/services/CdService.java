@@ -40,4 +40,10 @@ public class CdService implements ICdService {
     public List<CdDTO> findAllAsDTO() {
 	return cdRepository.findAllAsDTO();
     }
+
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
+    @Override
+    public void deleteById(Long id) {
+	cdJpaRepository.deleteById(id);
+    }
 }

@@ -12,4 +12,6 @@ public interface ICdService {
     public void save(Cd cd);
 
     public List<CdDTO> findAllAsDTO();
+
+    public void deleteById(Long id);
 }
