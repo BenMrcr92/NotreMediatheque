@@ -40,4 +40,11 @@ public class JeuService implements IJeuService {
     public List<JeuDTO> findAllAsDTO() {
 	return jeuRepository.findAllAsDTO();
     }
+
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')")
+    @Override
+    public String deleteById(Long id) {
+	jeuJpaRepository.deleteById(id);
+	return "redirect:/jeux/toList";
+    }
 }

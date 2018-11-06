@@ -24,7 +24,7 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="<c:url value="/films/toList" />"><spring:message code="entities.film.list.title" /></a>
 					<a class="dropdown-item" href="<c:url value="/livres/toList" />"><spring:message code="entities.livre.list.title" /></a>
-<%-- 					<a class="dropdown-item" href="<c:url value="/jeux/toList" />"><spring:message code="entities.jeu.list.title" /></a> --%>
+					<a class="dropdown-item" href="<c:url value="/jeux/toList" />"><spring:message code="entities.jeu.list.title" /></a>
 <%-- 					<a class="dropdown-item" href="<c:url value="/cds/toList" />"><spring:message code="entities.cd.list.title" /></a> --%>
 				</div>
 			</li>

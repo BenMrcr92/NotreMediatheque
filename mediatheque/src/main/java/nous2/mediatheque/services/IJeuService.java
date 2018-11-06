@@ -12,4 +12,6 @@ public interface IJeuService {
     public void save(Jeu jeu);
 
     public List<JeuDTO> findAllAsDTO();
+
+    public String deleteById(Long id);
 }
