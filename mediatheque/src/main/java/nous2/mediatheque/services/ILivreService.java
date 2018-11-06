@@ -12,4 +12,6 @@ public interface ILivreService {
     public void save(Livre livre);
 
     public List<LivreDTO> findAllAsDTO();
+
+    public String deleteById(Long id);
 }

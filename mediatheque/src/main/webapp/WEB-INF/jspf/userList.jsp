@@ -36,7 +36,7 @@
 							<td>${user.lastname}</td>
 							<td>${user.firstname}</td>
 							
-							<td><a href="<c:url value="/users/toUpdate?id=${user.id}" />"><spring:message code="entities.user.list.update" /></a></td>
+							<td><a href="<c:url value="/users/toUpdate?id=${user.id}" />"><spring:message code="entities.update" /></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

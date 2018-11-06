@@ -5,14 +5,14 @@
 <!DOCTYPE html>
 <html lang="${pageContext.response.locale.language}">
 <head>
-<title><spring:message code="entities.film.create.title" /></title>
+<title><spring:message code="entities.film.update.title" /></title>
 <c:import url="commonsHead.jsp" />
 </head>
 <body>
 	<c:import url="headerNav.jsp" />
 	<div class="container-fluid">
 		<section>
-			<h1 class="text-primary"><spring:message code="entities.film.create.title" /></h1>
+			<h1 class="text-primary"><spring:message code="entities.film.update.title" /></h1>
 			<form:form action="update" method="POST" modelAttribute="film">
 				<div class="form-row">
 					<form:hidden path="id" />

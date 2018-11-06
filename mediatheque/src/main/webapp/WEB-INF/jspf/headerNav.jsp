@@ -18,19 +18,19 @@
 				</div>
 			</li>
 		</sec:authorize>
-		<sec:authorize access="hasRole('ROLE_ADMIN')">
-			<li class="nav-item"><a class="nav-link" href="<c:url value="/users/toList" />"><spring:message code="commons.nav.userList" /></a></li>
-		</sec:authorize>
 		<sec:authorize access="isAuthenticated()">
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><spring:message code="commons.nav.elements.list" /></a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="<c:url value="/films/toList" />"><spring:message code="commons.nav.film" /></a>
-<%-- 					<a class="dropdown-item" href="<c:url value="/livres/toList" />"><spring:message code="commons.nav.livre" /></a> --%>
-<%-- 					<a class="dropdown-item" href="<c:url value="/jeux/toList" />"><spring:message code="commons.nav.jeu" /></a> --%>
-<%-- 					<a class="dropdown-item" href="<c:url value="/cds/toList" />"><spring:message code="commons.nav.cd" /></a> --%>
+					<a class="dropdown-item" href="<c:url value="/films/toList" />"><spring:message code="entities.film.list.title" /></a>
+					<a class="dropdown-item" href="<c:url value="/livres/toList" />"><spring:message code="entities.livre.list.title" /></a>
+<%-- 					<a class="dropdown-item" href="<c:url value="/jeux/toList" />"><spring:message code="entities.jeu.list.title" /></a> --%>
+<%-- 					<a class="dropdown-item" href="<c:url value="/cds/toList" />"><spring:message code="entities.cd.list.title" /></a> --%>
 				</div>
 			</li>
+		</sec:authorize>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<li class="nav-item"><a class="nav-link" href="<c:url value="/users/toList" />"><spring:message code="commons.nav.userList" /></a></li>
 		</sec:authorize>
 		<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><spring:message code="commons.nav.languages" /></a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">

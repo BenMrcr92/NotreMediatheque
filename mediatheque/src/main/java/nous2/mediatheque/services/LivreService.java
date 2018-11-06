@@ -40,4 +40,10 @@ public class LivreService implements ILivreService {
     public List<LivreDTO> findAllAsDTO() {
 	return livreRepository.findAllAsDTO();
     }
+
+    @Override
+    public String deleteById(Long id) {
+	livreJpaRepository.deleteById(id);
+	return "redirect:/livres/toList";
+    }
 }
