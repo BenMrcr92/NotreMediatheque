@@ -23,7 +23,7 @@
 						<th><spring:message code="entities.user.email" /></th>
 						<th><spring:message code="entities.user.lastname" /></th>
 						<th><spring:message code="entities.user.firstname" /></th>
-						
+						<th></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -35,8 +35,8 @@
 							<td>${user.email}</td>
 							<td>${user.lastname}</td>
 							<td>${user.firstname}</td>
-							
-							<td><a href="<c:url value="/users/toUpdate?id=${user.id}" />"><spring:message code="entities.update" /></a></td>
+							<td><a class="btn btn-primary btn-sm" href="<c:url value="/users/toUpdate?id=${user.id}" />"><i class="material-icons">create</i></a></td>
+							<td><a class="btn btn-primary btn-sm" href="<c:url value="/users/delete/${user.id}" />"><i class="material-icons">delete</i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

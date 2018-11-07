@@ -36,14 +36,14 @@
 							<tr>
 								<td>${film.nom}</td>
 								<td>${film.dateSortie}</td>
-								<td><i class="material-icons"><c:if test="${film.favori == true}">check</c:if><c:if test="${film.favori == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${film.favori == true}">favorite</c:if><c:if test="${film.favori == false}">favorite_border</c:if></i></td>
 								<td><i class="material-icons"><c:if test="${film.utilise == true}">check</c:if><c:if test="${film.utilise == false}">close</c:if></i></td>
 								<td><i class="material-icons"><c:if test="${film.dvd == true}">check</c:if><c:if test="${film.dvd == false}">close</c:if></i></td>
 								<td><i class="material-icons"><c:if test="${film.blueRay == true}">check</c:if><c:if test="${film.blueRay == false}">close</c:if></i></td>
 								<td><i class="material-icons"><c:if test="${film.numerique == true}">check</c:if><c:if test="${film.numerique == false}">close</c:if></i></td>
 								<sec:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">	
-									<td><a href="<c:url value="/films/toUpdate?id=${film.id}" />"><spring:message code="entities.update" /></a></td>
-									<td><a href="<c:url value="/films/delete/${film.id}" />"><spring:message code="entities.delete" /></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/films/toUpdate?id=${film.id}" />"><i class="material-icons">create</i></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/films/delete/${film.id}" />"><i class="material-icons">delete</i></a></td>
 								</sec:authorize>
 							</tr>
 						</c:forEach>

@@ -33,11 +33,11 @@
 							<tr>
 								<td>${cd.nom}</td>
 								<td>${cd.dateSortie}</td>
-								<td><i class="material-icons"><c:if test="${cd.favori == true}">check</c:if><c:if test="${cd.favori == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${cd.favori == true}">favorite</c:if><c:if test="${cd.favori == false}">favorite_border</c:if></i></td>
 								<td><i class="material-icons"><c:if test="${cd.utilise == true}">check</c:if><c:if test="${cd.utilise == false}">close</c:if></i></td>
 								<sec:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">	
-									<td><a href="<c:url value="/cds/toUpdate?id=${cd.id}" />"><spring:message code="entities.update" /></a></td>
-									<td><a href="<c:url value="/cds/delete/${cd.id}" />"><spring:message code="entities.delete" /></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/cds/toUpdate?id=${cd.id}" />"><i class="material-icons">create</i></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/cds/delete/${cd.id}" />"><i class="material-icons">delete</i></a></td>
 								</sec:authorize>
 							</tr>
 						</c:forEach>

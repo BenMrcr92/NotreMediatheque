@@ -33,11 +33,11 @@
 							<tr>
 								<td>${livre.nom}</td>
 								<td>${livre.dateParution}</td>
-								<td><i class="material-icons"><c:if test="${livre.favori == true}">check</c:if><c:if test="${livre.favori == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${livre.favori == true}">favorite</c:if><c:if test="${livre.favori == false}">favorite_border</c:if></i></td>
 								<td><i class="material-icons"><c:if test="${livre.utilise == true}">check</c:if><c:if test="${livre.utilise == false}">close</c:if></i></td>
 								<sec:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">	
-									<td><a href="<c:url value="/livres/toUpdate?id=${livre.id}" />"><spring:message code="entities.update" /></a></td>
-									<td><a href="<c:url value="/livres/delete/${livre.id}" />"><spring:message code="entities.delete" /></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/livres/toUpdate?id=${livre.id}" />"><i class="material-icons">create</i></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/livres/delete/${livre.id}" />"><i class="material-icons">delete</i></a></td>
 								</sec:authorize>
 							</tr>
 						</c:forEach>

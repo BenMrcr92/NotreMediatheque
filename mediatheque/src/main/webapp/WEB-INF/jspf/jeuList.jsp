@@ -33,11 +33,11 @@
 							<tr>
 								<td>${jeu.nom}</td>
 								<td>${jeu.dateEdition}</td>
-								<td><i class="material-icons"><c:if test="${jeu.favori == true}">check</c:if><c:if test="${jeu.favori == false}">close</c:if></i></td>
+								<td><i class="material-icons"><c:if test="${jeu.favori == true}">favorite</c:if><c:if test="${jeu.favori == false}">favorite_border</c:if></i></td>
 								<td><i class="material-icons"><c:if test="${jeu.utilise == true}">check</c:if><c:if test="${jeu.utilise == false}">close</c:if></i></td>
 								<sec:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">	
-									<td><a href="<c:url value="/jeux/toUpdate?id=${jeu.id}" />"><spring:message code="entities.update" /></a></td>
-									<td><a href="<c:url value="/jeux/delete/${jeu.id}" />"><spring:message code="entities.delete" /></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/jeux/toUpdate?id=${jeu.id}" />"><i class="material-icons">create</i></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/jeux/delete/${jeu.id}" />"><i class="material-icons">delete</i></a></td>
 								</sec:authorize>
 							</tr>
 						</c:forEach>
