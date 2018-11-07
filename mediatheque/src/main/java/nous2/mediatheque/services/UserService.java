@@ -63,4 +63,10 @@ public class UserService implements IUserService {
     public List<UserDTO> findAllAsDTO() {
 	return userRepository.findAllAsDTO();
     }
+
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @Override
+    public void deleteById(Long id) {
+	userJpaRepository.deleteById(id);
+    }
 }

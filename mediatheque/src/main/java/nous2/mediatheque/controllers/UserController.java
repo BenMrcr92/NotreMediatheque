@@ -76,6 +76,12 @@ public class UserController extends BaseController {
 	return "userList";
     }
 
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") Long id) {
+	userService.deleteById(id);
+	return "redirect:/users/toList";
+    }
+
     private boolean validateAndSave(User user, BindingResult result) {
 	validate(user, result);
 	if (!result.hasErrors()) {

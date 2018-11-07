@@ -14,4 +14,6 @@ public interface IUserService {
     public User findById(Long id);
 
     public List<UserDTO> findAllAsDTO();
+
+    public void deleteById(Long id);
 }
