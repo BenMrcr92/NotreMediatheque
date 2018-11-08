@@ -12,19 +12,17 @@
 <body>
 	<c:import url="headerNav.jsp" />
 	<div class="container-fluid">
-		<h1 class="text-primary">
-			<spring:message code="entities.user.list.title" />
-		</h1>
+		<h1 class="text-primary text-center"><spring:message code="entities.user.list.title" /></h1>
 		<div class="table-responsive">
 			<table class="table table-hover">
 				<thead class="thead-light">
 					<tr>
-						<th><spring:message code="entities.user.pseudo" /></th>
-						<th><spring:message code="entities.user.email" /></th>
-						<th><spring:message code="entities.user.lastname" /></th>
-						<th><spring:message code="entities.user.firstname" /></th>
-						<th></th>
-						<th></th>
+						<th scope="col"><spring:message code="entities.user.pseudo" /></th>
+						<th scope="col"><spring:message code="entities.user.email" /></th>
+						<th scope="col"><spring:message code="entities.user.lastname" /></th>
+						<th scope="col"><spring:message code="entities.user.firstname" /></th>
+						<th scope="col"></th>
+						<th scope="col"></th>
 					</tr>
 				</thead>
 				<tbody>

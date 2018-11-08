@@ -12,7 +12,7 @@
 	<c:import url="headerNav.jsp" />
 	<div class="container-fluid">
 		<section>
-			<h1 class="text-primary"><spring:message code="entities.jeu.update.title" /></h1>
+			<h1 class="text-primary text-center"><spring:message code="entities.jeu.update.title" /></h1>
 			<form:form action="update" method="POST" modelAttribute="jeu">
 				<div class="form-row">
 					<form:hidden path="id" />

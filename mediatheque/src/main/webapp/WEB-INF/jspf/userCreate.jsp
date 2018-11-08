@@ -12,7 +12,7 @@
 	<c:import url="headerNav.jsp" />
 	<div class="container-fluid">
 		<section>
-			<h1 class="text-primary"><spring:message code="entities.user.create.title" /></h1>
+			<h1 class="text-primary text-center"><spring:message code="entities.user.create.title" /></h1>
 			<form:form action="create" method="POST" modelAttribute="user">
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				<div class="form-row">

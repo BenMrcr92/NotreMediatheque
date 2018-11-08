@@ -12,7 +12,7 @@
 	<c:import url="headerNav.jsp" />
 	<div class="container-fluid">
 		<section>
-			<h1 class="text-primary">
+			<h1 class="text-primary text-center">
 				<spring:message code="login.title" />
 			</h1>
 			<form method="POST" action="<c:url value="/login" />">

@@ -12,7 +12,7 @@
 	<c:import url="headerNav.jsp" />
 	<div class="container-fluid">
 		<section>
-			<h1 class="text-primary"><spring:message code="entities.livre.create.title" /></h1>
+			<h1 class="text-primary text-center"><spring:message code="entities.livre.create.title" /></h1>
 			<form:form action="create" method="POST" modelAttribute="livre">
 				<div class="form-row">
 					<div class="form-group col">
