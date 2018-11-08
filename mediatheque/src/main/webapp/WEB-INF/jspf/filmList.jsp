@@ -13,6 +13,7 @@
 	<div class="container-fluid">
 		<section>
 			<h1 class="text-primary text-center"><spring:message code="entities.film.list.title" /></h1>
+			<a class="btn btn-primary float-right" href="<c:url value="/films/toCreate" />"><i class="material-icons">add_circle</i></a>
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead class="thead-primary">

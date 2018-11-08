@@ -13,6 +13,7 @@
 	<c:import url="headerNav.jsp" />
 	<div class="container-fluid">
 		<h1 class="text-primary text-center"><spring:message code="entities.user.list.title" /></h1>
+			<a class="btn btn-primary float-right" href="<c:url value="/users/toCreate" />"><i class="material-icons">add_circle</i></a>
 		<div class="table-responsive">
 			<table class="table table-hover">
 				<thead class="thead-light">
