@@ -29,11 +29,11 @@
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">account_circle</i></a>
 				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+					<sec:authorize access="hasRole('ROLE_ADMIN')">
+						<a class="dropdown-item" href="<c:url value="/users/toList" />"><spring:message code="commons.nav.userList" /></a>
+					</sec:authorize>
 					<a class="dropdown-item" href="<c:url value="/users/toUpdate?id=" /><sec:authentication property="principal.user.id" />"><spring:message code="commons.nav.settings.account" /></a>
 					<a class="dropdown-item" href="<c:url value="/logout" />"><spring:message code="commons.nav.settings.logout" /></a>
-					<sec:authorize access="hasRole('ROLE_ADMIN')">
-						<a class="dropdown-item" href="<c:url value="/users/toList" />"><spring:message code="commons.nav.userList" /></a></li>
-					</sec:authorize>
 				</div>
 			</li>
 		</sec:authorize>

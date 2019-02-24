@@ -13,7 +13,15 @@
 	<div class="container-fluid">
 		<section>
 			<h1 class="text-primary text-center"><spring:message code="entities.jeu.list.title" /></h1>
-			<a class="btn btn-primary float-right" href="<c:url value="/jeux/toCreate" />"><i class="material-icons">add_circle</i></a>
+			<div class="row justify-content-between mb-3">
+				<div class="input-group col-4">
+	   				<div class="input-group-prepend">
+	   					<i class="material-icons input-group-text">search</i>
+	   				</div>
+					<input class="form-control" id="recherche" type="text">
+				</div>
+				<a class="btn btn-primary" href="<c:url value="/jeux/toCreate" />"><i class="material-icons align-bottom">add_circle</i></a>
+			</div>
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead class="thead-primary">
@@ -26,7 +34,7 @@
 							<th scope="col"></th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="myTable">
 						<tr>
 						<c:forEach items="${jeux}" var="jeu">
 							<tr>
@@ -35,8 +43,8 @@
 								<td><i class="material-icons"><c:if test="${jeu.favori == true}">favorite</c:if><c:if test="${jeu.favori == false}">favorite_border</c:if></i></td>
 								<td><i class="material-icons"><c:if test="${jeu.utilise == true}">check</c:if><c:if test="${jeu.utilise == false}">close</c:if></i></td>
 								<sec:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">	
-									<td><a class="btn btn-primary btn-sm" href="<c:url value="/jeux/toUpdate?id=${jeu.id}" />"><i class="material-icons">create</i></a></td>
-									<td><a class="btn btn-primary btn-sm" href="<c:url value="/jeux/delete/${jeu.id}" />"><i class="material-icons">delete</i></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/jeux/toUpdate?id=${jeu.id}" />"><i class="material-icons align-bottom">create</i></a></td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value="/jeux/delete/${jeu.id}" />"><i class="material-icons align-bottom">delete</i></a></td>
 								</sec:authorize>
 							</tr>
 						</c:forEach>
@@ -46,5 +54,15 @@
 		</section>
 	</div>
 	<c:import url="footerNav.jsp" />
+	<script>
+		$(document).ready(function(){
+		  $("#recherche").on("keyup", function() {
+		    var value = $(this).val().toLowerCase();
+		    $("#myTable tr").filter(function() {
+		      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		    });
+		  });
+		});
+	</script>
 </body>
 </html>
